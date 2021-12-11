@@ -1,5 +1,14 @@
 <template>
-  <div class="main-big-button hidden">{{ text }}</div>
+  <div class="cluster">
+    <div id="raport" class="main-big-button hidden">Generate raport</div>
+    <div
+      id="main-big-button"
+      @click="generate()"
+      class="main-big-button hidden"
+    >
+      {{ text }}
+    </div>
+  </div>
 </template>
 
 <script>
@@ -7,10 +16,20 @@ export default {
   data: () => ({
     text: "Return",
   }),
+  methods: {
+    generate: function () {
+      let el = document.getElementById("raport");
+      el.classList.remove("hidden");
+    },
+  },
 };
 </script>
 
 <style>
+.cluster {
+  display: grid;
+  grid-template-rows: 28% 20%;
+}
 .hidden {
   opacity: 0;
   z-index: -1;

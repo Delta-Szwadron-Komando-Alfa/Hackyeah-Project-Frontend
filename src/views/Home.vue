@@ -19,9 +19,6 @@ export default {
 </script>
 
 <style>
-.spacer {
-  height: 3vh;
-}
 .center {
   margin: auto auto auto auto;
 }

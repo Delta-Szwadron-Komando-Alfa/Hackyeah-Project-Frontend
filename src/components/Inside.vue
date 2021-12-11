@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import ListItem from "./ListItem.vue";
+import ListItem from "./ListItemEND.vue";
 export default {
   props: {
     file: Array,
@@ -30,7 +30,7 @@ export default {
       //  JSON.parse(JSON.stringify(this.files));
       this.files.splice(this.files.indexOf(e), 1);
       if (this.files.length == 0) {
-        let el = document.getElementsByClassName("main-big-button")[0];
+        let el = document.getElementById("main-big-button");
         el.classList.add("hidden");
       }
     },
@@ -41,7 +41,7 @@ export default {
       [...droppedFiles].forEach((f) => {
         this.files.push(f);
       });
-      let el = document.getElementsByClassName("main-big-button")[0];
+      let el = document.getElementById("main-big-button");
       el.classList.remove("hidden");
     },
   },
