@@ -1,5 +1,5 @@
 <template>
-  <div  class="main">
+  <div class="main">
     <Nav @files="upload" />
     <Inside v-if="show" :file="files" />
   </div>
@@ -14,6 +14,14 @@ export default {
     files: [],
   }),
   components: { Nav, Inside },
+  props: { emit: Boolean },
+  watch: {
+    emit: function (val) {
+      if (val == true) {
+        console.log("test69");
+      }
+    },
+  },
   methods: {
     upload: function (event) {
       this.files.push(event);
@@ -36,6 +44,6 @@ export default {
   border-radius: var(--radius);
   display: grid;
   background-color: var(--mainGary);
-  grid-template-rows: 10% 60%;
+  grid-template-rows: 8% 60%;
 }
 </style>

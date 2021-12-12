@@ -1,8 +1,9 @@
 <template>
   <div class="home">
-    <Table class="center" />
+    <div class="title">OTWIERACZ.GOV</div>
+    <Table :emit="em" class="center" />
     <div class="spacer"></div>
-    <BigButton class="center" />
+    <BigButton @submit="emiter" class="center" />
   </div>
 </template>
 <script>
@@ -15,10 +16,26 @@ export default {
     Table,
     BigButton,
   },
+  data: () => ({
+    em: false,
+  }),
+  methods: {
+    emiter: function (event) {
+      this.em = event;
+    },
+  },
 };
 </script>
 
 <style>
+.title {
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+  font-size: 5vw;
+  top: 0.5em;
+  left: 1em;
+  position: absolute;
+}
 .center {
   margin: auto auto auto auto;
 }

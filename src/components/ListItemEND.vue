@@ -8,8 +8,9 @@
           margin-right: 20px;
           margin-top: auto;
           margin-bottom: auto;
-        ">
-        <img class="delete" @click="remove" src="../assets/pdf.svg" />
+        "
+      >
+        <img class="delete" @click="download" src="../assets/pdf.svg" />
       </div>
     </div>
   </div>
@@ -18,7 +19,9 @@
 <script>
 export default {
   props: { file: File },
+  component: {},
   methods: {},
+  downolad() {},
   mounted() {
     this.files = this.file;
   },

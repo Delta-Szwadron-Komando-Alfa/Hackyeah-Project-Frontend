@@ -1,11 +1,6 @@
 <template>
   <div class="cluster">
-    <div id="raport" class="main-big-button hidden">Generate raport</div>
-    <div
-      id="main-big-button"
-      @click="generate()"
-      class="main-big-button hidden"
-    >
+    <div id="main-big-button" @click="generate" class="main-big-button hidden">
       {{ text }}
     </div>
   </div>
@@ -14,12 +9,16 @@
 <script>
 export default {
   data: () => ({
-    text: "Return",
+    text: "Submit",
   }),
   methods: {
     generate: function () {
-      let el = document.getElementById("raport");
-      el.classList.remove("hidden");
+      if (this.text == "Return") {
+        this.text = "Submit";
+      } else {
+        this.$.emit("submit", true);
+        this.text = "Return";
+      }
     },
   },
 };
@@ -36,6 +35,7 @@ export default {
   transition: 0.5s all;
 }
 .main-big-button {
+  padding: 0.25em;
   text-align: center;
   display: grid;
   font-family: Arial, Helvetica, sans-serif;

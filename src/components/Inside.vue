@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import ListItem from "./ListItemEND.vue";
+import ListItem from "./ListItem.vue";
 export default {
   props: {
     file: Array,

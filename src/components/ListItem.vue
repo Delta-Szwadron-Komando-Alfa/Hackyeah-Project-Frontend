@@ -16,6 +16,7 @@
 
 <script>
 export default {
+  components: {},
   props: { file: File },
   methods: {
     remove: function () {
