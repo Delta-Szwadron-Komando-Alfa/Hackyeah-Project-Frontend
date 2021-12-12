@@ -9,6 +9,12 @@
         margin-bottom: auto;
       "
     >
+      <img
+        style="margin-right: 0.7em"
+        class="delete"
+        @click="generateRaport"
+        src="../assets/report.svg"
+      />
       <img class="delete" @click="remove" src="../assets/removeCirc.svg" />
     </div>
   </div>

@@ -8,8 +8,10 @@
 <script>
 import Nav from "./Nav.vue";
 import Inside from "./Inside.vue";
+import axios from "axios";
 export default {
   data: () => ({
+    x: true,
     show: true,
     files: [],
   }),
@@ -17,8 +19,15 @@ export default {
   props: { emit: Boolean },
   watch: {
     emit: function (val) {
-      if (val == true) {
-        console.log("test69");
+      if (val != !val) {
+        axios.post("http://localhost:8000/upload", this.file).then(
+          (res) => {
+            console.log(res);
+          },
+          (err) => {
+            console.log(err);
+          }
+        );
       }
     },
   },
@@ -40,7 +49,7 @@ export default {
 <style>
 .main {
   aspect-ratio: 2/1;
-  height: 40vw;
+  height: 33vw;
   border-radius: var(--radius);
   display: grid;
   background-color: var(--mainGary);

@@ -4,7 +4,7 @@
       <div style="margin-left: auto; margin-right: auto; margin-top: 30px">
         <img class="arrowsDown" src="../assets/arrowsDown.svg" />
       </div>
-      <div style="overflow: hidden" class="inside">Drop here files</div>
+      <div style="overflow: hidden" class="inside">Drop files here</div>
     </div>
     <div v-if="files.length >= 1" style="overflow: auto" class="Inside-Main">
       <ListItem v-for="x in files" :key="x" :file="x" @remove="rem" />

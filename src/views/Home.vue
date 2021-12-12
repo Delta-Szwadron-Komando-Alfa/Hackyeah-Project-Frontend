@@ -40,7 +40,7 @@ export default {
   margin: auto auto auto auto;
 }
 .home {
-  margin-top: 15vh;
+  margin-top: 14vh;
   display: grid;
   margin-bottom: 3vh;
 }

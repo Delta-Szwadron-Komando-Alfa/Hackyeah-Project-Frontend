@@ -15,6 +15,7 @@ export default {
     generate: function () {
       if (this.text == "Return") {
         this.text = "Submit";
+        this.$.emit("submit", false);
       } else {
         this.$.emit("submit", true);
         this.text = "Return";
